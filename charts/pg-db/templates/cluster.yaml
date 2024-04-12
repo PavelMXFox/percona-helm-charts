@@ -123,7 +123,7 @@ spec:
 
   instances:
   {{- range $instance := .Values.instances }}
-    - name: {{ default instance1 $instance.name }}
+    - name: {{ default "instance1" $instance.name }}
       replicas: {{ default 3 $instance.replicas }}
       {{- if $instance.affinity }}
       affinity:
