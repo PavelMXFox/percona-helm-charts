@@ -180,9 +180,9 @@ spec:
          resources:
            requests:
              storage: {{ $instance.walVolumeClaimSpec.resources.requests.storage }}
-        {{ - if $instance.walVolumeClaimSpec.storageClassName}}
+        {{- if $instance.walVolumeClaimSpec.storageClassName}}
         storageClassName: {{ $instance.walVolumeClaimSpec.storageClassName }}
-        {{ - end }}
+        {{- end }}
       {{- end }}
       dataVolumeClaimSpec:
         accessModes:
@@ -190,9 +190,9 @@ spec:
         resources:
           requests:
             storage: {{ $instance.dataVolumeClaimSpec.resources.requests.storage }}
-        {{ - if $instance.dataVolumeClaimSpec.storageClassName}}
+        {{- if $instance.dataVolumeClaimSpec.storageClassName}}
         storageClassName: {{ $instance.dataVolumeClaimSpec.storageClassName }}
-        {{ - end }}
+        {{- end }}
 
   {{- end }}
 
@@ -341,9 +341,9 @@ spec:
             resources:
               requests:
                 storage: {{ $volume.volumeClaimSpec.resources.requests.storage }}
-            {{ - if $volume.volumeClaimSpec.storageClassName}}
+            {{- if $volume.volumeClaimSpec.storageClassName}}
             storageClassName: {{ $volume.volumeClaimSpec.storageClassName }}
-            {{ - end }}
+            {{- end }}
         {{- end }}
         {{- if $s3 := $repo.s3 }}
         s3:
