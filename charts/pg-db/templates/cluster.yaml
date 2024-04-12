@@ -123,8 +123,8 @@ spec:
 
   instances:
   {{- range $instance := .Values.instances }}
-    - name: {{ default "instance1" $instance.name }}
-      replicas: {{ default 3 $instance.replicas }}
+    - name: {{ $instance.name }}
+      replicas: {{ $instance.replicas }}
       {{- if $instance.affinity }}
       affinity:
 {{ $instance.affinity | toYaml | indent 8 }}
